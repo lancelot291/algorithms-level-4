@@ -7,7 +7,6 @@ def solution(keymap, targets):
         flag = 0
         for ch in target:
             if ch not in "".join(keymap):
-                min_presses.append(-1)
                 flag = 1
                 break
             else:
@@ -16,7 +15,7 @@ def solution(keymap, targets):
                     press = (text.find(ch) + 1) if ch in text else 100
                     arr.append(press)
                 min_presses.append(min(arr))
-        answer_list.append(sum(min_presses)if flag == 0 else '')
+        answer_list.append(sum(min_presses)if flag == 0 else -1)
 
     return answer_list
 
